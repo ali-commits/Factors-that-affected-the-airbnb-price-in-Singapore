@@ -1,8 +1,7 @@
-library(tidyverse)
 library(dplyr)
 
 # check the working directory
-getwd()
+setwd('D:/Workspace/toitoi/Factors-that-affected-the-airbnb-price-in-Singapore/sk')
 
 # read the file
 data <- read.csv("singapore-Airbnb.csv")
@@ -16,8 +15,7 @@ processed_data <- dplyr::filter(data,
                                 data$availability_365 > 0,
                                 # remove if the last_review is empty
                                 !is.na(data$last_review)
-                                )
-
+                              )
 
 # check the file 
 head(processed_data)
@@ -67,7 +65,14 @@ data_north_east_region <- dplyr::filter(processed_data, processed_data$neighbour
 # get the 5 number summary
 fivenum(data_north_east_region$price)
 
-# find out who get more money from the hosting activities
 
+# Q : find out who get more money from the hosting activities ? 
+# we dont have transactions...
+
+# Q : top 3 host name with the most unit listed (by Central region)...
+data_central_region %>% group_by(host_id, host_name) %>% count() %>% arrange(desc(n))
+
+# for all region
+processed_data %>% group_by(host_id, host_name) %>% count() %>% arrange(desc(n))
 
 
