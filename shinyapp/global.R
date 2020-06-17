@@ -14,7 +14,7 @@ library('mapview')
 # NYC <- read_csv("~/Downloads/new-york-city-airbnb-open-data/AB_NYC_2019.csv", 
 #                                col_types = cols(host_id = col_skip(), 
 #                                                 id = col_skip()))
-SGSIN <- read_csv("../singapore-Airbnb-final.csv", 
+SGSIN <- read_csv("singapore-Airbnb-final.csv", 
                 col_types = cols(
                   # host_id = col_skip(), 
                   # host_name = col_skip(), 
