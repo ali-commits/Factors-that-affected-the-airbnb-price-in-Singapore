@@ -17,6 +17,7 @@ shinyUI(dashboardPage(
       menuItem("Bar Plot", tabName = "plot1", icon = icon("chart-bar")),
       menuItem("Price Chart", tabName = "price", icon = icon("chart-line")),
       menuItem("Data", tabName = "data", icon = icon("database")),
+      menuItem("Map View", tabName = "mapview", icon = icon("database")),
       menuItem("About Group", tabName = "Group", icon = icon("user-circle")))
   ),
   dashboardBody(
@@ -92,6 +93,20 @@ shinyUI(dashboardPage(
       
       tabItem(tabName = "data",
               fluidPage(dataTableOutput('table')
+              )),
+      tabItem(tabName = "mapview",
+              fluidPage(
+                sidebarPanel(
+                  h3(strong("Objective :")),
+                  h4("Show the host list who hosted more than 100 units in SG airbnb."),
+                  h3(strong("Motivation :")),
+                  h4("To run airbnb as business, choose a good location is the top strategy, find out these hosts, apparently these people know what they are doing. And we are following their movement."),
+                  h3(strong("Finding :")),
+                  h4("The map showing top hosts focusing their business in certain areas, that means, if we were to start airbnb in SG, we could just need to look for cluster units of these 'top hosts'."),
+                  h6(""),
+                  h4("For example, Balestier, Geylang, and Tanjong Pagar are all good spots.")
+                ),
+                mainPanel(leaflet::leafletOutput("mapplot"))
               )),
       tabItem(tabName = "Group",
               fluidPage(

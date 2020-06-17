@@ -51,4 +51,17 @@ shinyServer(function(input, output,session){
   output$table <- DT::renderDataTable({
     datatable(SGSIN, rownames=FALSE)
   })
+  
+  
+  # show the map view
+  output$mapplot <- mapview::renderMapview({
+    mapview::mapview(data_locations_sf,
+                     zcol = "hostname",
+                     legend = T,
+                     legend.opacity = 0.5,
+                     layer.name = 'Host Name'
+    )
+  })
+  
+  
 })
