@@ -17,7 +17,7 @@ shinyUI(dashboardPage(
       menuItem("Bar Plot", tabName = "plot1", icon = icon("chart-bar")),
       menuItem("Price Chart", tabName = "price", icon = icon("chart-line")),
       menuItem("Data", tabName = "data", icon = icon("database")),
-      menuItem("Map View", tabName = "mapview", icon = icon("database")),
+      menuItem("Top 3 Host", tabName = "mapview", icon = icon("database")),
       menuItem("About Group", tabName = "Group", icon = icon("user-circle")))
   ),
   dashboardBody(
