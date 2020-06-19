@@ -151,9 +151,9 @@ demand2<-filter(demand1, price >= 150 & price <= 200)
 fun_mode(demand1$neighbourhood)
 
 qplot(neighbourhood,data = demand1, color = room_type)
-
+#Based on price
 treemap(demand1, index = "neighbourhood", vSize = "price", type = "index")
-
+#Based on minimum_nights
 treemap(demand, index = "neighbourhood", vSize = "minimum_nights", type = "index")
 
 #############################################
