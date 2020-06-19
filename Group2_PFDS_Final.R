@@ -8,7 +8,7 @@ library('Hmisc')
 
 
 # Please update to current directory
-setwd("C:/Users/royku/Sem I Modules/WQD7004-Programming for DS/Project")
+# setwd("C:/Users/royku/Sem I Modules/WQD7004-Programming for DS/Project")
 
 # Loading Overwatch data from Kaggle
 SGAIRBNB <- read.csv("Raw_data_set.csv")
@@ -206,7 +206,7 @@ allregionhost <- processed_data %>%
     count() %>% 
     arrange(desc(n))
 
-counttop_host_in_all_region <- top_n(allregionhost, n>100)
+top_host_in_all_region <- top_n(allregionhost, n>100)
 # show the host list who hosted more than 100 units in SG airbnb
 top_host_in_all_region
 #####################################################################
