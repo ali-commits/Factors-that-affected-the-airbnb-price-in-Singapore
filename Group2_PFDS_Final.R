@@ -8,10 +8,10 @@ library('Hmisc')
 
 
 # Please update to current directory
-setwd("C:/Users/royku/Sem I Modules/WQD7004-Programming for DS/Project")
+# setwd("C:/Users/royku/Sem I Modules/WQD7004-Programming for DS/Project")
 
-# Loading Overwatch data from Kaggle
-SGAIRBNB <- read.csv("Raw_data_set.csv")
+# Loading Overwatch data from github
+SGAIRBNB <- read.csv("https://raw.githubusercontent.com/newaaa41/Factors-that-affected-the-airbnb-price-in-Singapore/master/Raw_data_set.csv")
 
 #Shows strc dbl -> double (for double precision floating point numbers)
 glimpse(SGAIRBNB)
